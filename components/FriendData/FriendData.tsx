@@ -82,6 +82,9 @@ export const FriendData = ({ userData, id, theme }: UserData): JSX.Element => {
     return <LoadingComponent />;
   }
 
+  console.log(userData);
+  
+
   const checkUserId: number | undefined = userData.friends_id.find((i) => i === userId)
 
   return (
@@ -258,7 +261,7 @@ export const FriendData = ({ userData, id, theme }: UserData): JSX.Element => {
             </div>
           </div>
           <div className={css.quantityWrapper}>
-            <div className={css.quantity}>548</div>
+            <div className={css.quantity}>{userData.friends_id.length}</div>
             <button
               className={css.button}
               onClick={() => router.push(`/home/profile/friends/${id}`)}

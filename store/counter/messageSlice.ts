@@ -9,7 +9,7 @@ export interface IMessage {
   text: string;
   chat_id: number;
   is_read: boolean;
-  post_id: number | null;
+  post_id: number;
 }
 
 export const messageSlice = createSlice({

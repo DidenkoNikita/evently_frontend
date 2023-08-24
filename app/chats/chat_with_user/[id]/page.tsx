@@ -93,7 +93,7 @@ export default function ChatPage() {
   const userData: UsersList | null = usersList.find((user) => user.id === id) || null;
 
   const messages: IMessage[] = useSelector((state: State) => state.messages);
-  const filterMessage: IMessage[] = messages.filter((message) => message.chat_id === chatId);
+  const filterMessage: IMessage[] = messages.filter((message) => message.chat_id === chatId);  
 
   useEffect((): void => {
     if (wrapperRef.current) {
@@ -133,7 +133,7 @@ export default function ChatPage() {
               {i18n.t('you_dont_have')}
             </div>
           ) : (
-            filterMessage.map((message: IMessage, index: number) => {
+            filterMessage.map((message: IMessage, index: number) => {              
               const currentDate: moment.Moment = moment(message.created_at);
               const previousDate: moment.Moment | null = index > 0 ? moment(messages[index - 1].created_at) : null;
               const isPreviousMessageDifferentUser = (index: number): boolean => {
@@ -174,7 +174,7 @@ export default function ChatPage() {
                 );
               }
 
-              if (message.post_id) {
+              if (message.post_id) {                                
                 return (
                   <div
                     key={message.id}

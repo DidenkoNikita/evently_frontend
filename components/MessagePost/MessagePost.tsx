@@ -45,7 +45,7 @@ export const MessagePost = ({
 
   const posts: Post[] = useSelector((state: State) => state.posts);
 
-  const filteredPost: Post | undefined = posts.find((post) => post.id === message.post_id);
+  const filteredPost: Post | undefined = posts.find((post) => post.id === message.post_id);  
 
   const like: boolean | undefined = filteredPost?.like.includes(Number(id));
 
